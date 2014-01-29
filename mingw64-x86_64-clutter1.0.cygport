@@ -1,0 +1,29 @@
+CROSS_HOST="x86_64-w64-mingw32"
+ORIG_PN="clutter"
+inherit cross gnome2
+
+NAME="mingw64-x86_64-clutter1.0"
+VERSION=1.14.6
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="OpenGL-based animated GUI library for Win64 toolchain"
+DESCRIPTION="Clutter is an open source software library for creating fast,
+visually rich and animated graphical user interfaces. Clutter uses OpenGL for
+rendering but with an API which hides the underlying GL complexity from the
+developer. The API is intended to be easy to use, efficient and flexible."
+HOMEPAGE="http://clutter-project.org/"
+
+PATCH_URI="1.14.6-mingw-examples.patch"
+
+DIFF_EXCLUDES="clutter-*.h .gitignore README"
+
+CYGCONF_ARGS="
+	--disable-cex100-backend
+	--disable-egl-backend
+	--enable-gdk-backend
+	--disable-quartz-backend
+	--disable-wayland-backend
+	--enable-win32-backend
+	--disable-x11-backend
+	lt_cv_deplibs_check_method=pass_all
+"
