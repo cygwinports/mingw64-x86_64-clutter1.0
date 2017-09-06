@@ -3,7 +3,7 @@ ORIG_PN="clutter"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-clutter1.0"
-VERSION=1.26.0
+VERSION=1.26.2
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="OpenGL-based animated GUI library for Win64 toolchain"
